@@ -14,7 +14,7 @@ function TodoTable() {
 
   const fetchTodos = async () => {
     try {
-      const response = await axios.get('http://localhost:3000/itemRoutes');
+      const response = await axios.get('https://backend-todo-1-doce.onrender.com/itemRoutes');
       setTodos(response.data);
       setLoading(false);
     } catch (error) {
@@ -36,7 +36,7 @@ function TodoTable() {
       });
 
       if (result.isConfirmed) {
-        await axios.delete(`http://localhost:3000/itemRoutes/${id}`);
+        await axios.delete(`https://backend-todo-1-doce.onrender.com/itemRoutes/${id}`);
         setTodos(todos.filter(todo => todo._id !== id));
         Swal.fire({
           title: 'Deleted!',
